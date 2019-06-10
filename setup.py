@@ -11,10 +11,10 @@ setuptools.setup(
     author="Saman Farahmand",
     author_email="saman.farahmand001@umb.edu",
     description=(
-        'A Text Mining Approach For Exploring Transcription Factor-Target Gene Direction Extraction Through PubMed Abstracts'),
+        'A Text Mining system to extract transcription factor-target gene mode of regulation through pubmed abstracts'),
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url='https://github.com/umbibio/ChIPMiner',
+    url='https://github.com/samanfrm/ModEx.git',
     packages=setuptools.find_packages(),
     license='MIT',
     classifiers=[
@@ -28,6 +28,6 @@ setuptools.setup(
         "Operating System :: OS Independent"
     ],
     install_requires=['numpy', 'pandas', 'biopython', 'nltk','networkx','jellyfish',
-                      'becas','requests','string','json'],
+                      'becas','requests','string','json','re'],
     zip_safe=False,
 )
