@@ -27,8 +27,6 @@ setuptools.setup(
         "Topic :: Scientific/Engineering :: Bio-Informatics",
         "Operating System :: OS Independent"
     ],
-
-    cmdclass = {'build_ext': build_ext},
     install_requires=['numpy', 'pandas', 'biopython', 'nltk','networkx','jellyfish',
                       'becas','requests','string','json','re'],
     zip_safe=False,
