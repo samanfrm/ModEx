@@ -28,6 +28,6 @@ setuptools.setup(
         "Operating System :: OS Independent"
     ],
     install_requires=['numpy', 'pandas', 'biopython', 'nltk','networkx','jellyfish',
-                      'becas','requests','string','json','re'],
+                      'becas','requests'],
     zip_safe=False,
 )
