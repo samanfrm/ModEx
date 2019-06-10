@@ -11,9 +11,7 @@ setuptools.setup(
     author="Saman Farahmand",
     author_email="saman.farahmand001@umb.edu",
     description=(
-        'A Text Mining Approach For Exploring Transcription Factor-Target Gene 
-        'Direction Extraction Through PubMed Abstracts'
-        ),
+        'A Text Mining Approach For Exploring Transcription Factor-Target Gene Direction Extraction Through PubMed Abstracts'),
     long_description=long_description,
     long_description_content_type="text/markdown",
     url='https://github.com/umbibio/ChIPMiner',
