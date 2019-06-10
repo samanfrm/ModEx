@@ -57,7 +57,7 @@ Also, optional values for the MeSH term and email address should be defined:
 
 ```python
 mesh='humans'
-email='samanfm@gmail.com'
+email='example@mail.com'
 ```
 Finally, we can run the test mining system to annotate the query interaction as well as associated evidence and citations:
 
@@ -69,3 +69,6 @@ The result is a dataframe including mode of regulation and all of the associated
 | src_entrez  |  trg_entrez | srcname  | trgname  |  mode     | score  | evi_pmid        | evi_sent                  |
 |-------------|-------------|----------|----------|-----------|--------|-----------------|---------------------------|
 |  26574      |  4609       | AATF     |  MYC     |  positive | 4      | 20924650;2054...| [20924650]WE HAVE UNAMB...|
+
+
+## Citation
