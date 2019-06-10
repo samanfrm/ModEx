@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+module unload python3
+module load python3/3.5.0
+
+for i in {0..1}
+do
+	bsub -q long  -n 1 -R span[hosts=1] -R rusage[mem=4096] -W 15:00 python3 Main.py part$i > part_$i.out &
+	
+done
+
