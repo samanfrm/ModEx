@@ -7,7 +7,7 @@ Deciphering the network of TF-target interactions with information on mode of re
 
 However, these interactions are not annotated with information on context and mode of regulation. Such information is crucial to gain a global picture of gene regulatory mechanisms and can aid in developing machine learning models for applications such as biomarker discovery, prediction of response to therapy, and precision medicine. 
 
-we introduce a text-mining system, to annotate ChIP-seq derived interaction with such meta data trough mining PubMed articles.
+we introduce a text-mining system, to annotate ChIP-seq derived interaction with such meta data through mining PubMed articles.
 
 ## Dependencies and Installation
 ModEx can be installed using the GitHub repository. All of the dependencies will be installed via setup.py script.
@@ -18,13 +18,14 @@ python3 setup.py install --user
 cd ..
 ```
 ## Import libraries
+We need to import required libraries into the script:
 ```python
 import pandas as pd
 import functions as fn
 import os
 ```
-## Run the system for a query interaction
-First, the paths to necessary files and dictionaries must be defined basedn on relative path from script directory:
+## Run the system for a sample query interaction
+First, the paths to necessary files and dictionaries must be defined based on relative path from script directory:
 
 ```python
 input_directory=os.path.realpath('../Data')
@@ -39,6 +40,32 @@ genes=pd.read_csv(genes_ents,sep=',',header=(0))
 genes.fillna('', inplace=True)
 
 lookup_ids=pd.read_csv(input_directory+"/ncbi_id_lookup.csv",sep='\t',header=(0))
-
-CHIP_result=pd.DataFrame(columns=['src_entrez','trg_entrez','srcname','trgname','mode','score','evi_pmid','evi_sent'])
 ```
+Then, we need to create the query variables and assign them with the transcription factor and target genes entrez IDs respectively:
+
+```python
+# [TF_ID, Target_ID]
+query_id=[26574,4609]
+```
+
+Next, we need to set the port binded to the dependency parser:
+
+```python
+parser_port="8000"
+```
+Also, optional values for the MeSH term and email address should be defined:
+
+```python
+mesh='humans'
+email='samanfm@gmail.com'
+```
+Finally, we can run the test mining system to annotate the query interaction as well as associated evidence and citations:
+
+```python
+res=fn.modex(query_id,parser_port,Positive,Negative,lookup_ids,genes,mesh,email)
+```
+The result is a dataframe including mode of regulation and all of the associated citations and evidence sentences for the annotation:
+
+| src_entrez  |  trg_entrez | srcname  | trgname  |  mode     | score  | evi_pmid        | evi_sent                  |
+|-------------|-------------|----------|----------|-----------|--------|-----------------|---------------------------|
+|  26574      |  4609       | AATF     |  MYC     |  positive | 4      | 20924650;2054...| [20924650]WE HAVE UNAMB...|
