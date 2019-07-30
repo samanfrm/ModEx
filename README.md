@@ -48,7 +48,7 @@ Then, we need to create the query variables and assign them with the transcripti
 query_id=[26574,4609]
 ```
 
-Next, we need to set the binding port to [Stanford CoreNLP](https://stanfordnlp.github.io/CoreNLP/):
+Next, we need to set the binding port to [Stanford CoreNLP](https://stanfordnlp.github.io/CoreNLP/) as the parser:
 
 ```python
 parser_port="8000"
