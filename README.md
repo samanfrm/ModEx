@@ -72,3 +72,5 @@ The result is a dataframe including mode of regulation and all of the associated
 
 
 ## Citation
+
+Saman Farahmand, Todd Riley, Kourosh Zarringhalam, "ModEx: A text mining system for extracting mode of regulation of Transcription Factor-gene regulatory interaction", BioRxiv, 2019
