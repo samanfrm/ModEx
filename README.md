@@ -13,7 +13,7 @@ we introduce a text-mining system, to annotate ChIP-seq derived interaction with
 ModEx can be installed using the GitHub repository. All of the dependencies will be installed via setup.py script.
 ```
 git clone https://github.com/samanfrm/ModEx
-cd gbnet
+cd ModEx
 python3 setup.py install --user
 cd ..
 ```
